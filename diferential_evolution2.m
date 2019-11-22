@@ -7,11 +7,11 @@ N = 10;  % tamanho da populacao
 C = 0.8;  % probabilidade de cruzamento
 F = 0.8;  % fator de escala
 n = 3;    % quantidade de variáveis do problema
-global flc1;
-flc1 = readfis('flc1.fis');
+global flc2;
+flc2 = readfis('flc2.fis');
 
 % Limites
-fobj = @custo;
+fobj = @custo2;
 lb = [0, 0, 0];
 ub = [25, 1.2, 1.2];
 
@@ -27,9 +27,11 @@ m = 1;
 while(m<2)
     for i = 1:n
         population_matrix(i, :) = lb(i) + (ub(i)-lb(i))*rand(1, N);
+    end
+    
+    for i = 1:N
         fitness(i) = fobj(population_matrix(:, i));
     end
-
 
     while(iteration < max_iterations)
         iteration = iteration + 1;

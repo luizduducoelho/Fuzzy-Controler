@@ -29,13 +29,13 @@ MF3='mf3':'trimf',[0 0.5 1]
 
 [Output1]
 Name='uf2'
-Range=[-10 10]
+Range=[-30 30]
 NumMFs=5
-MF1='mf1':'trimf',[-10 -10 -5]
-MF2='mf2':'trimf',[-10 -5 0]
-MF3='mf3':'trimf',[-5 0 5]
-MF4='mf4':'trimf',[0 5 10]
-MF5='mf5':'trimf',[5 10 10]
+MF1='mf1':'trimf',[-30 -30 -15]
+MF2='mf2':'trimf',[-30 -15 0]
+MF3='mf3':'trimf',[-15 0 15]
+MF4='mf4':'trimf',[0 15 30]
+MF5='mf5':'trimf',[15 30 30]
 
 [Rules]
 1 1, 1 (1) : 1
