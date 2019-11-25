@@ -1,4 +1,4 @@
-function soma_erro_absoluto = custo(vector_bases)
+function soma_erro_absoluto = custo_coupled(vector_bases)
     
     %flc1 = readfis('flc1.fis');
     global flc1;

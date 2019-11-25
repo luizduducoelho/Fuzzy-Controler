@@ -8,7 +8,7 @@ h21 = tf([1.082], [75 1]);
 h22 = tf([-1.096], [75 1]);
 H = [h11, h12; h21, h22];
 
-flc1 = readfis('flc1.fis');
+flc2 = readfis('flc2.fis');
 
 
 LO = 25;
@@ -40,7 +40,7 @@ flc2.input(2).mf(2).params = [c22-L2/2, c22, c22+L2/2];
 flc2.input(2).mf(3).params = [c23-L2/2, c23, c23+L2/2];
 %}
 
-sim('siso1.slx')
+sim('siso2.slx')
 
 % plota
 figure()

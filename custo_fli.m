@@ -44,7 +44,7 @@ function soma_erro_absoluto = custo(vector_bases)
 
     
     % Chama simulacao
-    sim('complete_diagram.slx');
+    sim('complete_diagram_previous.slx');
     soma_erro_absoluto = trapz(yout{3}.Values.time, abs(yout{3}.Values.Data)) + trapz(yout{4}.Values.time, abs(yout{4}.Values.Data));
     plot(yout{1}.Values.time, abs(yout{1}.Values.Data));
     hold on
