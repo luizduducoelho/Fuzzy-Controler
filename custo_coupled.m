@@ -22,7 +22,7 @@ function soma_erro_absoluto = custo_coupled(vector_bases)
     flc1.input(1).mf(2).params = [c12-L1/2, c12, c12+L1/2];
     flc1.input(1).mf(3).params = [c13-L1/2, c13, c13+L1/2];
     flc1.input(1).mf(4).params = [MIN_LIM, MIN_LIM, c11-L1/2, c11-L1/2];
-    flc1.input(1).mf(5).params = [c11+L1/2, c11+L1/2, MAX_LIM, MAX_LIM];
+    flc1.input(1).mf(5).params = [c13+L1/2, c13+L1/2, MAX_LIM, MAX_LIM];
 
     L2 = base_entrada2;
     c22 = 0;
@@ -55,7 +55,7 @@ function soma_erro_absoluto = custo_coupled(vector_bases)
     flc2.input(1).mf(2).params = [c12-L1/2, c12, c12+L1/2];
     flc2.input(1).mf(3).params = [c13-L1/2, c13, c13+L1/2];
     flc2.input(1).mf(4).params = [MIN_LIM, MIN_LIM, c11-L1/2, c11-L1/2];
-    flc2.input(1).mf(5).params = [c11+L1/2, c11+L1/2, MAX_LIM, MAX_LIM];
+    flc2.input(1).mf(5).params = [c13+L1/2, c13+L1/2, MAX_LIM, MAX_LIM];
 
     L2 = base2_entrada2;
     c22 = 0;

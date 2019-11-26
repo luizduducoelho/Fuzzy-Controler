@@ -15,7 +15,7 @@ flc2 = readfis('flc2.fis');
 % Limites
 fobj = @custo_coupled;
 lb = [0, 0, 0, 0, 0, 0];
-ub = [300, 300, 5, 300, 300, 5];
+ub = [100, 10, 5, 100, 10, 5];
 
 %% Main Loop 
 %termination_condition = run max_iterations
