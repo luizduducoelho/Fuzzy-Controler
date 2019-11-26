@@ -13,7 +13,7 @@ DefuzzMethod='centroid'
 
 [Input1]
 Name='erro1'
-Range=[-300 300]
+Range=[-1000 1000]
 NumMFs=5
 MF1='mf1':'trimf',[-1.01 -0.505 0]
 MF2='mf2':'trimf',[-0.505 0 0.505]
@@ -31,7 +31,7 @@ MF3='mf3':'trimf',[0 0.2925 0.585]
 
 [Output1]
 Name='uf2'
-Range=[-100 100]
+Range=[-1000 1000]
 NumMFs=5
 MF1='mf1':'trimf',[-14.42055 -9.6137 -4.80685]
 MF2='mf2':'trimf',[-9.6137 -4.80685 0]
