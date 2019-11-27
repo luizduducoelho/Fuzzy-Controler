@@ -13,19 +13,19 @@ DefuzzMethod='wtaver'
 
 [Input1]
 Name='uf1'
-Range=[-30 30]
+Range=[-100 100]
 NumMFs=3
-MF1='mf1':'trimf',[-54 -30 -6]
-MF2='mf2':'trimf',[-24 0 24]
-MF3='mf3':'trimf',[6 30 54]
+MF1='mf1':'trimf',[-180 -100 -20]
+MF2='mf2':'trimf',[-80 0 80]
+MF3='mf3':'trimf',[20 100 180]
 
 [Input2]
 Name='uf2'
-Range=[-30 30]
+Range=[-100 100]
 NumMFs=3
-MF1='mf1':'trimf',[-55 -30 -5]
-MF2='mf2':'trimf',[-25 0 25]
-MF3='mf3':'trimf',[5 30 55]
+MF1='mf1':'trimf',[-183.3 -100 -16.67]
+MF2='mf2':'trimf',[-83.33 0 83.33]
+MF3='mf3':'trimf',[16.67 100 183.3]
 
 [Output1]
 Name='uc1'
