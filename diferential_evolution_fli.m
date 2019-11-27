@@ -6,16 +6,20 @@ close all;
 N = 30;  % tamanho da populacao
 C = 0.8;  % probabilidade de cruzamento
 F = 0.8;  % fator de escala
-n = 6;    % quantidade de variáveis do problema
+n = 10;    % quantidade de variáveis do problema
 global flc1;
 global flc2;
+global fli;
+global w1;
+global w2;
 flc1 = readfis('flc1.fis');
 flc2 = readfis('flc2.fis');
+fli = readfis('fli.fis');
 
 % Limites
-fobj = @custo_coupled;
-lb = [0, 0, 0, 0, 0, 0];
-ub = [100, 10, 5, 100, 10, 5];
+fobj = @custo_fli;
+lb = [0, 0, -5, -5, -5, -5, -5, -5, -100, -100];
+ub = [100, 100, 5, 5, 5, 5, 5, 5, 100, 100];
 
 %% Main Loop 
 %termination_condition = run max_iterations
@@ -34,6 +38,8 @@ while(m<2)
     for i = 1:N
         fitness(i) = fobj(population_matrix(:, i));
     end
+    [best, best_index] = min(fitness);
+    best_individual = new_population(:, best_index);
 
     while(iteration < max_iterations)
         iteration = iteration + 1;
@@ -72,7 +78,8 @@ while(m<2)
         otimo(iteration) = min(fitness);
         population_matrix = new_population;
         new_population = [];
-        %plotar(fobj,lb,ub,iteration,population_matrix,fitness)
+        dlmwrite('best.dat',best_individual ,'-append');
+        dlmwrite('fitness.dat',best ,'-append');
     end
     iterations_vector(m) = iteration;
     m = m+1;
