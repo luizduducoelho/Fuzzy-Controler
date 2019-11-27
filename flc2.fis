@@ -15,29 +15,29 @@ DefuzzMethod='centroid'
 Name='erro2'
 Range=[-1000 1000]
 NumMFs=5
-MF1='mf1':'trimf',[-1.1275 -0.56375 0]
-MF2='mf2':'trimf',[-0.56375 0 0.56375]
-MF3='mf3':'trimf',[0 0.56375 1.1275]
-MF4='mf4':'trapmf',[-1000 -1000 -1.1275 -1.1275]
-MF5='mf5':'trapmf',[1.1275 1.1275 1000 1000]
+MF1='mf1':'trimf',[-0.5233 -0.26165 0]
+MF2='mf2':'trimf',[-0.26165 0 0.26165]
+MF3='mf3':'trimf',[0 0.26165 0.5233]
+MF4='mf4':'trapmf',[-300 -300 -0.5233 -0.5233]
+MF5='mf5':'trapmf',[0.5233 0.5233 300 300]
 
 [Input2]
 Name='derivadaerro2'
 Range=[-5 5]
 NumMFs=3
-MF1='mf1':'trimf',[-1.2 -0.6 0]
-MF2='mf2':'trimf',[-0.6 0 0.6]
-MF3='mf3':'trimf',[0 0.6 1.2]
+MF1='mf1':'trimf',[-4.6934 -2.3467 0]
+MF2='mf2':'trimf',[-2.3467 0 2.3467]
+MF3='mf3':'trimf',[0 2.3467 4.6934]
 
 [Output1]
 Name='uf2'
 Range=[-1000 1000]
 NumMFs=5
-MF1='mf1':'trimf',[-37.5 -25 -12.5]
-MF2='mf2':'trimf',[-25 -12.5 0]
-MF3='mf3':'trimf',[-12.5 0 12.5]
-MF4='mf4':'trimf',[0 12.5 25]
-MF5='mf5':'trimf',[12.5 25 37.5]
+MF1='mf1':'trimf',[-73.5798 -49.0532 -24.5266]
+MF2='mf2':'trimf',[-49.0532 -24.5266 0]
+MF3='mf3':'trimf',[-24.5266 0 24.5266]
+MF4='mf4':'trimf',[0 24.5266 49.0532]
+MF5='mf5':'trimf',[24.5266 49.0532 73.5798]
 
 [Rules]
 1 1, 1 (1) : 1
