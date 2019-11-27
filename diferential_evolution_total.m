@@ -39,7 +39,7 @@ while(m<2)
         fitness(i) = fobj(population_matrix(:, i));
     end
     [best, best_index] = min(fitness);
-    best_individual = new_population(:, best_index);
+    best_individual = population_matrix(:, best_index);
 
     while(iteration < max_iterations)
         iteration = iteration + 1;
