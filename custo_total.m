@@ -26,7 +26,6 @@ function soma_erro_absoluto = custo(vector_bases)
 
     
     %Parâmetros FLI
-    
     L1 = base_entrada1;
     c12 = 0;
     c11 = c12 - L1/2;
@@ -58,17 +57,21 @@ function soma_erro_absoluto = custo(vector_bases)
     L2_flc1 = base_entrada2_flc1;
     L3_flc1 = base_saida_flc1;
     
-    centro11_flc1 = 0;
-    centro12_flc1 = centro11_flc1 - L1_flc1/2;
-    centro13_flc1 = centro11_flc1 + L1_flc1/2;
+    centro12_flc1 = 0;
+    centro11_flc1 = centro12_flc1 - L1_flc1/2;
+    centro13_flc1 = centro12_flc1 + L1_flc1/2;
+    MIN_LIM = -300;
+    MAX_LIM = 300;
     
     flc1.input(1).mf(1).params = [centro11_flc1-L1_flc1/2, centro11_flc1, centro11_flc1+L1_flc1/2];
     flc1.input(1).mf(2).params = [centro12_flc1-L1_flc1/2, centro12_flc1, centro12_flc1+L1_flc1/2];
     flc1.input(1).mf(3).params = [centro13_flc1-L1_flc1/2, centro13_flc1, centro13_flc1+L1_flc1/2];
+    flc1.input(1).mf(4).params = [MIN_LIM, MIN_LIM, centro11_flc1-L1_flc1/2, centro11_flc1-L1_flc1/2];
+    flc1.input(1).mf(5).params = [centro13_flc1+L1_flc1/2, centro13_flc1+L1_flc1/2, MAX_LIM, MAX_LIM];
     
-    centro21_flc1 = 0;
-    centro22_flc1 = centro21_flc1 - L2_flc1/2;
-    centro23_flc1 = centro21_flc1 + L2_flc1/2;
+    centro22_flc1 = 0;
+    centro21_flc1 = centro22_flc1 - L2_flc1/2;
+    centro23_flc1 = centro22_flc1 + L2_flc1/2;
     
     flc1.input(2).mf(1).params = [centro21_flc1-L2_flc1/2, centro21_flc1, centro21_flc1+L2_flc1/2];
     flc1.input(2).mf(2).params = [centro22_flc1-L2_flc1/2, centro22_flc1, centro22_flc1+L2_flc1/2];
@@ -93,17 +96,19 @@ function soma_erro_absoluto = custo(vector_bases)
     L2_flc2 = base_entrada2_flc2;
     L3_flc2 = base_saida_flc2;
     
-    centro11_flc2 = 0;
-    centro12_flc2 = centro11_flc2 - L1_flc2/2;
-    centro13_flc2 = centro11_flc2 + L1_flc2/2;
+    centro12_flc2 = 0;
+    centro11_flc2 = centro12_flc2 - L1_flc2/2;
+    centro13_flc2 = centro12_flc2 + L1_flc2/2;
     
     flc2.input(1).mf(1).params = [centro11_flc2-L1_flc2/2, centro11_flc2, centro11_flc2+L1_flc2/2];
     flc2.input(1).mf(2).params = [centro12_flc2-L1_flc2/2, centro12_flc2, centro12_flc2+L1_flc2/2];
     flc2.input(1).mf(3).params = [centro13_flc2-L1_flc2/2, centro13_flc2, centro13_flc2+L1_flc2/2];
+    flc2.input(1).mf(4).params = [MIN_LIM, MIN_LIM, centro11_flc2-L1_flc2/2, centro11_flc2-L1_flc2/2];
+    flc2.input(1).mf(5).params = [centro13_flc2+L1_flc2/2, centro13_flc2+L1_flc2/2, MAX_LIM, MAX_LIM];
     
-    centro21_flc2 = 0;
-    centro22_flc2 = centro21_flc2 - L2_flc2/2;
-    centro23_flc2 = centro21_flc2 + L2_flc2/2;
+    centro22_flc2 = 0;
+    centro21_flc2 = centro22_flc2 - L2_flc2/2;
+    centro23_flc2 = centro22_flc2 + L2_flc2/2;
     
     flc2.input(2).mf(1).params = [centro21_flc2-L2_flc2/2, centro21_flc2, centro21_flc2+L2_flc2/2];
     flc2.input(2).mf(2).params = [centro22_flc2-L2_flc2/2, centro22_flc2, centro22_flc2+L2_flc2/2];
@@ -122,10 +127,7 @@ function soma_erro_absoluto = custo(vector_bases)
     flc2.output.mf(5).params = [co5_flc2-L3_flc2/2, co5_flc2, co5_flc2+L3_flc2/2];
     
     % Chama simulacao
-    sim('complete_diagram.slx');
-    soma_erro_absoluto = trapz(yout{3}.Values.time, abs(yout{3}.Values.Data)) + trapz(yout{4}.Values.time, abs(yout{4}.Values.Data));
-    plot(yout{1}.Values.time, abs(yout{1}.Values.Data));
-    hold on
-    plot(yout{2}.Values.time, abs(yout{2}.Values.Data));
+    sim('complete_diagram_previous.slx');
+    soma_erro_absoluto = trapz(yout{3}.Values.time, yout{3}.Values.Data.^2) + trapz(yout{4}.Values.time, yout{4}.Values.Data.^2);
 
 end
