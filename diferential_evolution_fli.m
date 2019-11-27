@@ -18,8 +18,8 @@ fli = readfis('fli.fis');
 
 % Limites
 fobj = @custo_fli;
-lb = [0, 0, -5, -5, -5, -5, -5, -5, -100, -100];
-ub = [100, 100, 5, 5, 5, 5, 5, 5, 100, 100];
+lb = [0, 0, -5, -5, -5, -5, -5, -5, -5, -5];
+ub = [100, 100, 5, 5, 5, 5, 5, 5, 5, 5];
 
 %% Main Loop 
 %termination_condition = run max_iterations
