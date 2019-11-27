@@ -3,7 +3,7 @@ clc;
 close all;
 
 %% Initialize population with random candidate solutions
-N = 30;  % tamanho da populacao
+N = 40;  % tamanho da populacao
 C = 0.8;  % probabilidade de cruzamento
 F = 0.8;  % fator de escala
 n = 16;    % quantidade de variáveis do problema
@@ -23,7 +23,7 @@ ub = [100, 100, 5, 5, 5, 5, 5, 5, 5, 5, 100, 10, 5, 100, 10, 5];
 
 %% Main Loop 
 %termination_condition = run max_iterations
-max_iterations = 30;
+max_iterations = 25;
 iteration = 0;
 new_population = [];
 fitness = [];
